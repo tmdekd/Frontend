@@ -13,19 +13,84 @@
 
 ---
 
+<br>
+
 ## 화면 구성 및 스크린샷
 
-| 메인 페이지 |
-| :---------: |
-| ![메인 페이지](https://user-images.githubusercontent.com/80824750/208456048-acbf44a8-cd71-4132-b35a-500047adbe1c.gif) |
-| 리뉴얼된 메인 페이지의 레이아웃과 메뉴 구성. |
+### 메인페이지
+<table>
+  <tr>
+    <td>메인페이지 PC</td>
+    <td>메인페이지 Mobile</td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/a30a32c9-5734-40f7-bc6c-1bb164599931" width="1000"/>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/0f7b4d40-e893-4ce3-b07f-7ce0c8b8d664" width="300"/>
+    </td>
+  </tr>
+</table>
 
-| 대시보드 |
-| :-------: |
-| ![대시보드](https://user-images.githubusercontent.com/80824750/208456234-fb5fe434-aa65-4d7a-b955-89098d5bbe0b.gif) |
-| 개인 사용자를 위한 대시보드로, 맞춤형 정보와 간결한 UI 제공. |
+<br>
+
+### 회원가입 페이지
+<table>
+  <tr>
+    <td>회원가입 페이지 PC</td>
+    <td>회원가입 페이지 Mobile</td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/eca22857-4f3b-4b62-bf8c-1044e3b7cb24" width="1000"/>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/b4c35cbc-bc61-4f5b-bfb3-3357b5572027" width="300"/>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+### 로그인 페이지
+<table>
+  <tr>
+    <td>로그인 페이지 PC</td>
+    <td>로그인 페이지 Mobile</td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/b30a87be-5dfa-43d2-8665-abc897cfe004" width="1000"/>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/c3820fb9-af3b-494d-90a2-f14593a527e9" width="300"/>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+### 학과 소개 페이지
+<table>
+  <tr>
+    <td>학과 소개 페이지 PC</td>
+    <td>학과 소개 페이지 Mobile</td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/1551a239-27a8-4bd4-8d81-c949482703ff" width="1000"/>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/f0b1c836-b761-4286-a82b-4c4d25c887b7" width="300"/>
+    </td>
+  </tr>
+</table>
+
 
 ---
+
+<br>
 
 ## 사용 기술 스택
 
@@ -39,6 +104,8 @@
 <img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white">
 
 ---
+
+<br>
 
 ## 프로젝트 팀원
 
