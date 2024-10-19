@@ -25,7 +25,7 @@
 
 |한국복지사이버대학교|
 |:---:|
-|<img src="https://github.com/user-attachments/assets/a30a32c9-5734-40f7-bc6c-1bb164599931" width="450"/>|
+|<img src="https://github.com/user-attachments/assets/a30a32c9-5734-40f7-bc6c-1bb164599931" width="1000"/>|
 |메인 페이지 PC 화면.|
 
 <br />
