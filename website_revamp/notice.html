@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국복지사이버대학</title>
+  <link rel="stylesheet" type="text/css" href="css/reset_kyungsoo.css">
+  <link rel="stylesheet" type="text/css" href="css/notice.css">
+  <link rel="shortcut icon" href="image/pavicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+</head>
+<body>
+  <div id="wrap">
+    <header>
+      <div id="sub_nav">
+        <div id="markup">
+          <ul>
+            <li><a href="index.html">대학홈페이지</a></li>
+            <li><a href="https://go.corea.ac.kr/">입시홈페이지</a></li>
+          </ul>
+        </div>
+        <div id="util">
+          <ul>
+            <li><a href="login.html">로그인</a></li>
+            <li><a href="signup.html">회원가입</a></li>
+            <li><a href="http://www.corea.ac.kr/program/sitemap/?CUMENUCODE=000000012369">사이트맵</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="logo">
+        <img src="image/logo.png" alt="logo">
+      </div>      
+      <nav class="nav">
+        <ul class="gnb_pc">
+          <li>
+            <a href="#">대학소개</a>
+            <ul>
+              <li><a href="#">학교소개</a></li>
+              <li><a href="#">총장인사말</a></li>
+              <li><a href="#">학교법인</a></li>
+              <li><a href="#">대학헌장</a></li>
+              <li><a href="#">규정</a></li>
+              <li><a href="#">대학홍보실</a></li>
+              <li><a href="#">정보공개</a></li>
+              <li><a href="#">입찰공고</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="intro_depart.html">학과소개</a>
+            <ul>
+              <li><a href="#">인문사회계열</a></li>
+              <li><a href="#">자연과학계열</a></li>
+              <li><a href="#">예체능계열</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">학사운영</a>
+            <ul>
+              <li><a href="#">학칙</a></li>
+              <li><a href="#">학사일정</a></li>
+              <li><a href="#">학사제도</a></li>
+              <li><a href="#">장학제도</a></li>
+              <li><a href="#">병무안내</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">학사지원센터</a>
+            <ul>
+              <li><a href="#">증명서발급</a></li>
+              <li><a href="#">수업도우미</a></li>
+              <li><a href="#">오리엔테이션</a></li>
+              <li><a href="#">원격지원</a></li>
+              <li><a href="#">수강정정신청</a></li>
+              <li><a href="#">개인학적 조회/변경</a></li>
+              <li><a href="#">학번/비밀번호 찾기</a></li>
+              <li><a href="#">재학생수강신청</a></li>
+              <li><a href="#">교원지원서 접수</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">공지사항</a>
+            <ul>
+              <li><a href="#">학사공지</a></li>
+              <li><a href="#">학교소식</a></li>
+              <li><a href="#">일반공지</a></li>
+              <li><a href="#">보도자료</a></li>
+              <li><a href="#">수업활동(실습공지)</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">학생광장</a>
+            <ul>
+              <li><a href="#">학생동정</a></li>
+              <li><a href="#">질의응답</a></li>
+              <li><a href="#">장애학생 고충상담</a></li>
+              <li><a href="#">스터디모임</a></li>
+              <li><a href="#">동아리모임</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">오리엔테이션</a>
+            <ul>
+              <li><a href="#">학기개요</a></li>
+              <li><a href="#">학습자 기본PC사양</a></li>
+              <li><a href="#">공동인증안내</a></li>
+              <li><a href="#">강의실 입장</a></li>
+              <li><a href="#">강의실 구성 및 내용</a></li>
+              <li><a href="#">시험 및 성적평가</a></li>
+              <li><a href="#">과제물</a></li>
+              <li><a href="#">시험응시</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- jQuery 기본 예제를 이용해 열렸다 접혔다하게 함 -->
+      <span class="menu_toggle_btn">
+        전체 메뉴 토글 버튼
+        <nav class="mobile_nav">
+          <ul class="gnb">
+            <li>
+              <a href="#" id="intro_univ">대학소개</a>
+              <ul class="gnb_hidden" id="menu1">
+                <li><a href="#">학교소개</a></li>
+                <li><a href="#">총장인사말</a></li>
+                <li><a href="#">학교법인</a></li>
+                <li><a href="#">대학헌장</a></li>
+                <li><a href="#">규정</a></li>
+                <li><a href="#">대학홍보실</a></li>
+                <li><a href="#">정보공개</a></li>
+                <li><a href="#">입찰공고</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" id="intro_depart">학과소개</a>
+              <ul class="gnb_hidden" id="menu2">
+                <li><a href="#">인문사회계열</a></li>
+                <li><a href="#">자연과학계열</a></li>
+                <li><a href="#">예체능계열</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" id="haksa">학사운영</a>
+              <ul class="gnb_hidden" id="menu4">
+                <li><a href="#">학칙</a></li>
+                <li><a href="#">학사일정</a></li>
+                <li><a href="#">학사제도</a></li>
+                <li><a href="#">장학제도</a></li>
+                <li><a href="#">병무안내</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" id="haksa_jiwon">학사지원센터</a>
+              <ul class="gnb_hidden" id="menu5">
+                <li><a href="#">증명서발급</a></li>
+                <li><a href="#">수업도우미</a></li>
+                <li><a href="#">오리엔테이션</a></li>
+                <li><a href="#">원격지원</a></li>
+                <li><a href="#">수강정정신청</a></li>
+                <li><a href="#">개인학적 조회/변경</a></li>
+                <li><a href="#">학번/비밀번호 찾기</a></li>
+                <li><a href="#">재학생수강신청</a></li>
+                <li><a href="#">교원지원서 접수</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" id="notice">공지사항</a>
+              <ul class="gnb_hidden" id="menu6">
+                <li><a href="#">학사공지</a></li>
+                <li><a href="#">학교소식</a></li>
+                <li><a href="#">일반공지</a></li>
+                <li><a href="#">보도자료</a></li>
+                <li><a href="#">수업활동(실습공지)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" id="student_square">학생광장</a>
+              <ul class="gnb_hidden" id="menu7">
+                <li><a href="#">학생동정</a></li>
+                <li><a href="#">질의응답</a></li>
+                <li><a href="#">장애학생 고충상담</a></li>
+                <li><a href="#">스터디모임</a></li>
+                <li><a href="#">동아리모임</a></li>
+              </ul>
+            </li>
+            <li class="last">
+              <a href="#" id="orientation">오리엔테이션</a>
+              <ul class="gnb_hidden" id="menu8">
+                <li><a href="#">학기개요</a></li>
+                <li><a href="#">학습자 기본PC사양</a></li>
+                <li><a href="#">공동인증안내</a></li>
+                <li><a href="#">강의실 입장</a></li>
+                <li><a href="#">강의실 구성 및 내용</a></li>
+                <li><a href="#">시험 및 성적평가</a></li>
+                <li><a href="#">과제물</a></li>
+                <li><a href="#">시험응시</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </span>
+    </header>
+    <div class="notice">
+      <div class="top_notice">
+        <h1>공지사항</h1>
+      </div>
+      <div class="board_wrap">
+        <table class="board_list">
+          <caption class="notice_caption">공지사항 > 글목록</caption>
+          <thead>
+            <tr>
+              <th>NO</th>
+              <th>제목</th>
+              <th>글유형</th>
+              <th>등록일</th>
+              <th>첨부</th>
+              <th>조회</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>공지</td>
+              <td><a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000014589&SMETHOD=&SKEYWORD=&SOR=and&SARTICLETYPE=9983&MENUCODE=000000014589&CONTENTNO=203102">2학기 수강철회 신청 안내</a></td>
+              <td>학사공지</td>
+              <td>2022.09.29</td>
+              <td><img src="image/kyungsoo/disk.gif"></td>
+              <td>16545</td>
+            </tr>
+            <tr>
+              <td>공지</td>
+              <td><a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000014589&SMETHOD=&SKEYWORD=&SOR=and&SARTICLETYPE=9983&MENUCODE=000000014589&CONTENTNO=202334">2022학년도 2학기 사회복지현장실습 대면세미나 세부일정 안내(실습시간 160시간 대상자)</a></td>
+              <td>일반공지</td>
+              <td>2022.09.05</td>
+              <td><img src="image/kyungsoo/disk.gif"></td>
+              <td>16545</td>
+            </tr>
+            <tr>
+              <td>공지</td>
+              <td>2022학년도 2학기 산업체 재직상황조사</td>
+              <td>학사공지</td>
+              <td>2022.09.29</td>
+              <td><img src="image/kyungsoo/image/disk.gif"></td>
+              <td>16545</td>
+            </tr>
+            <tr>
+              <td>공지</td>
+              <td>2022학년도 2학기 보육교사 대면교육 시행 안내</td>
+              <td>학사공지</td>
+              <td>2022.09.29</td>
+              <td><img src="image/kyungsoo/image/disk.gif"></td>
+              <td>16545</td>
+            </tr>
+            <tr>
+              <td>공지</td>
+              <td>교수학습지원센터 2022학년도 비교과프로그램운영 안내</td>
+              <td>학사공지</td>
+              <td>2022.09.29</td>
+              <td><img src="image/kyungsoo/image/disk.gif"></td>
+              <td>16545</td>
+            </tr>
+            <tr>
+              <td>공지</td>
+              <td>사회복지사2급 자격증 발급신청방법 안내</td>
+              <td>학사공지</td>
+              <td>2022.09.29</td>
+              <td><img src="image/kyungsoo/image/disk.gif"></td>
+              <td>16545</td>
+            </tr>
+            <tr>
+              <td>공지</td>
+              <td>2022년 1학기 재학생/졸업생 대상 무료특강 및 자격시험 안내</td>
+              <td>학사공지</td>
+              <td>2022.09.29</td>
+              <td><img src="image/kyungsoo/image/disk.gif"></td>
+              <td>16545</td>
+            </tr>
+            <tr>
+              <td>공지</td>
+              <td>스마트폰 과의존 예방 교육 안내</td>
+              <td>학사공지</td>
+              <td>2022.09.29</td>
+              <td><img src="image/kyungsoo/image/disk.gif"></td>
+              <td>16545</td>
+            </tr>
+            <tr>
+              <td>공지</td>
+              <td>학습참여도 점수 부여 방법 및 유의사항 안내</td>
+              <td>학사공지</td>
+              <td>2022.09.29</td>
+              <td><img src="image/kyungsoo/image/disk.gif"></td>
+              <td>16545</td>
+            </tr>
+            <tr>
+              <td>공지</td>
+              <td>2022학년도 6차 교원 초빙 공고</td>
+              <td>학사공지</td>
+              <td>2022.09.29</td>
+              <td><img src="image/kyungsoo/image/disk.gif"></td>
+              <td>16545</td>
+            </tr>
+            <tr>
+              <td>공지</td>
+              <td>교직원 채용 공고(육아휴직 대체인력)</td>
+              <td>학사공지</td>
+              <td>2022.09.29</td>
+              <td><img src="image/kyungsoo/image/disk.gif"></td>
+              <td>16545</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="paging">
+          <a href="#">처음</a>
+          <a href="#"><img src="image/kyungsoo/doubleleftgo.gif"></a>
+          <a href="#">이전 10</a>
+          <a href="#"><img src="image/kyungsoo/leftgo.gif"></a>
+          <a href="#">이전</a>
+          <a href="#">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+          <a href="#">다음</a>
+          <a href="#"><img src="image/kyungsoo/rightgo.gif"></a>
+          <a href="#">다음10</a>
+          <a href="#"><img src="image/kyungsoo/doblerightgo.gif"></a>
+          <a href="#">마지막</a>
+        </div>
+      </div>
+    </div>
+    
+    <footer id="footer">
+      <section class="info_section">
+        <ul>
+          <li>
+            <p><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000012373">개인정보처리방침</a></p>
+            <p><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014826">이메일무단수집거부</a></p>
+            <p><a href="https://www.academyinfo.go.kr/pubinfo/pubinfo1600/doInit.do?schlId=0000576">대학정보공시</a></p>
+            <p><a href="http://www.corea.ac.kr/program/sitemap/?CUMENUCODE=000000012369">사이트맵</a></p>
+            <p><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014561">전화번호 안내</a></p>
+            <p><a href="http://www.corea.ac.kr/bbs/Content.aspx?CUMENUCODE=000000019039&PageVersion=20220924153324">예·결산공고</a></p>
+            <p><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014557">대학소개</a></p>
+          </li>
+        </ul>
+      </section> 
+      <div id="copyright_bar">
+        <ul>
+          <li>본교 : (우)38695 경상북도 경산시 남천면 남천로 746-10 한국복지사이버대학<br> Tel : 1644-9775 / Fax : 053) 815-6500</li>
+          <li>서울지역학습관 : 서울 강남구 개포로 211, 5층/7층(개포동, 파워엠빌딩)<br>Tel : 1644-9775 / Fax : 02) 577-0085</li>
+          <li>평생교육원 : 서울 강남구 개포로 211, 5층/7층(개포동, 파워엠빌딩)<br>Tel : 1644-9885 / Fax : 02) 577-0085</li>
+          <li>대학고유번호 : 515-82-09324, 대표자 총장 최원석</li>
+          <li>Copyright ⓒ Corea Welfare Cyber College. All Rights Reserved.</li>
+        </ul>
+        <div class="copyright_number">
+          <ul>
+            <li>
+              <p>입학안내</p>
+              <p>1644-9775</p>
+            </li>
+            <li>
+              <p>시간제안내</p>
+              <p>1644-9885</p>
+            </li>
+          </ul>
+        </div>
+        <div id="map_tel">
+          <p>찾아오시는 길</p>
+          <a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000024511"><img src="image/map_min.png" alt="찾아오시는길" id="map_min"></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/flat.min.js"></script>
+</body>
+</html>

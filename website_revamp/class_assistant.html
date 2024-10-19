@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국복지사이버대학</title>
+  <link rel="stylesheet" type="text/css" href="css/reset_kyungsoo.css">
+  <link rel="stylesheet" type="text/css" href="css/class_assistant.css">
+  <link rel="shortcut icon" href="image/pavicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+</head>
+<body>
+  <div id="wrap">
+    <header>
+      <div id="sub_nav">
+        <div id="markup">
+          <ul>
+            <li><a href="index.html">대학홈페이지</a></li>
+            <li><a href="https://go.corea.ac.kr/">입시홈페이지</a></li>
+          </ul>
+        </div>
+        <div id="util">
+          <ul>
+            <li><a href="login.html">로그인</a></li>
+            <li><a href="signup.html">회원가입</a></li>
+            <li><a href="http://www.corea.ac.kr/program/sitemap/?CUMENUCODE=000000012369">사이트맵</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="logo">
+        <img src="image/logo.png" alt="logo">
+      </div>      
+      <nav class="nav">
+        <ul class="gnb_pc">
+          <li>
+            <a href="#">대학소개</a>
+            <ul>
+              <li><a href="#">학교소개</a></li>
+              <li><a href="#">총장인사말</a></li>
+              <li><a href="#">학교법인</a></li>
+              <li><a href="#">대학헌장</a></li>
+              <li><a href="#">규정</a></li>
+              <li><a href="#">대학홍보실</a></li>
+              <li><a href="#">정보공개</a></li>
+              <li><a href="#">입찰공고</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="intro_depart.html">학과소개</a>
+            <ul>
+              <li><a href="#">인문사회계열</a></li>
+              <li><a href="#">자연과학계열</a></li>
+              <li><a href="#">예체능계열</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">학사운영</a>
+            <ul>
+              <li><a href="#">학칙</a></li>
+              <li><a href="#">학사일정</a></li>
+              <li><a href="#">학사제도</a></li>
+              <li><a href="#">장학제도</a></li>
+              <li><a href="#">병무안내</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">학사지원센터</a>
+            <ul>
+              <li><a href="#">증명서발급</a></li>
+              <li><a href="#">수업도우미</a></li>
+              <li><a href="#">오리엔테이션</a></li>
+              <li><a href="#">원격지원</a></li>
+              <li><a href="#">수강정정신청</a></li>
+              <li><a href="#">개인학적 조회/변경</a></li>
+              <li><a href="#">학번/비밀번호 찾기</a></li>
+              <li><a href="#">재학생수강신청</a></li>
+              <li><a href="#">교원지원서 접수</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">공지사항</a>
+            <ul>
+              <li><a href="#">학사공지</a></li>
+              <li><a href="#">학교소식</a></li>
+              <li><a href="#">일반공지</a></li>
+              <li><a href="#">보도자료</a></li>
+              <li><a href="#">수업활동(실습공지)</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">학생광장</a>
+            <ul>
+              <li><a href="#">학생동정</a></li>
+              <li><a href="#">질의응답</a></li>
+              <li><a href="#">장애학생 고충상담</a></li>
+              <li><a href="#">스터디모임</a></li>
+              <li><a href="#">동아리모임</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">오리엔테이션</a>
+            <ul>
+              <li><a href="#">학기개요</a></li>
+              <li><a href="#">학습자 기본PC사양</a></li>
+              <li><a href="#">공동인증안내</a></li>
+              <li><a href="#">강의실 입장</a></li>
+              <li><a href="#">강의실 구성 및 내용</a></li>
+              <li><a href="#">시험 및 성적평가</a></li>
+              <li><a href="#">과제물</a></li>
+              <li><a href="#">시험응시</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- jQuery 기본 예제를 이용해 열렸다 접혔다하게 함 -->
+      <span class="menu_toggle_btn">
+        전체 메뉴 토글 버튼
+        <nav class="mobile_nav">
+          <ul class="gnb">
+            <li>
+              <a href="#" id="intro_univ">대학소개</a>
+              <ul class="gnb_hidden" id="menu1">
+                <li><a href="#">학교소개</a></li>
+                <li><a href="#">총장인사말</a></li>
+                <li><a href="#">학교법인</a></li>
+                <li><a href="#">대학헌장</a></li>
+                <li><a href="#">규정</a></li>
+                <li><a href="#">대학홍보실</a></li>
+                <li><a href="#">정보공개</a></li>
+                <li><a href="#">입찰공고</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" id="intro_depart">학과소개</a>
+              <ul class="gnb_hidden" id="menu2">
+                <li><a href="#">인문사회계열</a></li>
+                <li><a href="#">자연과학계열</a></li>
+                <li><a href="#">예체능계열</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" id="haksa">학사운영</a>
+              <ul class="gnb_hidden" id="menu4">
+                <li><a href="#">학칙</a></li>
+                <li><a href="#">학사일정</a></li>
+                <li><a href="#">학사제도</a></li>
+                <li><a href="#">장학제도</a></li>
+                <li><a href="#">병무안내</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" id="haksa_jiwon">학사지원센터</a>
+              <ul class="gnb_hidden" id="menu5">
+                <li><a href="#">증명서발급</a></li>
+                <li><a href="#">수업도우미</a></li>
+                <li><a href="#">오리엔테이션</a></li>
+                <li><a href="#">원격지원</a></li>
+                <li><a href="#">수강정정신청</a></li>
+                <li><a href="#">개인학적 조회/변경</a></li>
+                <li><a href="#">학번/비밀번호 찾기</a></li>
+                <li><a href="#">재학생수강신청</a></li>
+                <li><a href="#">교원지원서 접수</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" id="notice">공지사항</a>
+              <ul class="gnb_hidden" id="menu6">
+                <li><a href="#">학사공지</a></li>
+                <li><a href="#">학교소식</a></li>
+                <li><a href="#">일반공지</a></li>
+                <li><a href="#">보도자료</a></li>
+                <li><a href="#">수업활동(실습공지)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" id="student_square">학생광장</a>
+              <ul class="gnb_hidden" id="menu7">
+                <li><a href="#">학생동정</a></li>
+                <li><a href="#">질의응답</a></li>
+                <li><a href="#">장애학생 고충상담</a></li>
+                <li><a href="#">스터디모임</a></li>
+                <li><a href="#">동아리모임</a></li>
+              </ul>
+            </li>
+            <li class="last">
+              <a href="#" id="orientation">오리엔테이션</a>
+              <ul class="gnb_hidden" id="menu8">
+                <li><a href="#">학기개요</a></li>
+                <li><a href="#">학습자 기본PC사양</a></li>
+                <li><a href="#">공동인증안내</a></li>
+                <li><a href="#">강의실 입장</a></li>
+                <li><a href="#">강의실 구성 및 내용</a></li>
+                <li><a href="#">시험 및 성적평가</a></li>
+                <li><a href="#">과제물</a></li>
+                <li><a href="#">시험응시</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </span>
+    </header>
+    
+    <div id="main">
+      <div class="mainWrap">
+        <div class="left_container">
+          <div id="left_top">
+            <h2>학사지원센터</h2>
+          </div>
+          <ul>
+            <li><img src="image/kyungsoo/sub_menu_dot.png" alt="메뉴용"><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014579">증명서발급</a></li>
+            <li><img src="image/kyungsoo/sub_menu_dot.png" alt="메뉴용"><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014579">수업도우미</a></li>
+            <li><img src="image/kyungsoo/sub_menu_dot.png" alt="메뉴용"><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014579">오리엔테이션</a></li>
+            <li><img src="image/kyungsoo/sub_menu_dot.png" alt="메뉴용"><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014579">원격지원</a></li>
+            <li><img src="image/kyungsoo/sub_menu_dot.png" alt="메뉴용"><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014579">수강정정신청</a></li>
+            <li><img src="image/kyungsoo/sub_menu_dot.png" alt="메뉴용"><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014579">개인학적 조회/변경</a></li>
+            <li><img src="image/kyungsoo/sub_menu_dot.png" alt="메뉴용"><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014579">학번/비밀번호찾기</a></li>
+            <li><img src="image/kyungsoo/sub_menu_dot.png" alt="메뉴용"><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014579">재학생수강신청</a></li>
+            <li><img src="image/kyungsoo/sub_menu_dot.png" alt="메뉴용"><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014579">설문조사/자격증신청</a></li>
+            <li><img src="image/kyungsoo/sub_menu_dot.png" alt="메뉴용"><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014579">교원지원서접수</a></li>
+          </ul>
+        </div>
+        <div id="center_container">
+          <div class="center">
+            <div class="title_center">
+              <li>수업도우미</li>
+            </div>
+            <div class="contents_center">
+              <table id="table_center">  
+                <li><img src="image/kyungsoo/right_arrow.jpg" alt="우화살표">학습을 위한 기본 PC사양</li> 
+                <thead>	
+                  <tr>
+                    <th>구분</th>
+                    <th>항목</th>
+                    <th>최소사양</th>
+                    <th>권장사양</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th rowspan="5">하드웨어환경</th>
+                    <td>CPU</td>
+                    <td>intel Core i3 8세대 이상</td>
+                    <td>intel Core i5 8세대 이상</td>
+                  </tr>
+                  <tr>
+                    <td>메모리</td>
+                    <td>4GB RAM 이상</td>
+                    <td>8GB RAM 이상</td>
+                  </tr>
+                  <tr>
+                    <td>통신장비</td>
+                    <td>100Mbps 이상</td>
+                    <td>1Gbps 이상</td>
+                  </tr>
+                  <tr>
+                    <td>멀티미디어장비</td>
+                    <td>스피커 or 헤드셋</td>
+                    <td>스피커 or 헤드셋</td>
+                  </tr>
+                  <tr>
+                    <td>해상도</td>
+                    <td>1280 * 1024 이상</td>
+                    <td>1920 * 1080 이상</td>
+                  </tr>
+                  <tr>
+                    <th rowspan="2">소프트웨어환경</th>
+                    <td>운영체제</td>
+                    <td>Windows 10 이상</td>
+                    <td>Windows 10 이상</td>
+                  </tr>
+                  <tr>
+                    <td>브라우져</td>
+                    <td>Internet Explorer 11 이상</td>
+                    <td>Internet Explorer 11 이상</td>
+                  </tr>
+                </tbody>
+            
+              </table>
+              <div class="image_center">
+                <li><img src="image/kyungsoo/right_arrow.jpg" alt="우화살표">학습을 위한 기본 PC사양</li> 
+                <li><img src="image/kyungsoo/tit_2.jpg"></li>
+                <li><img src="image/kyungsoo/icon_3.jpg" alt="한컴"><b>한글과컴퓨터 뷰어</b>한글로 작성된 파일을 볼 수 있습니다(hwp)<img src="../소스 파일/image/down.jpg" alt="다운"></li> 
+                <li><img src="image/kyungsoo/icon_7.jpg" alt="워포인트"><b>워포인트 뷰어</b>파워포인트로 작성된 파일을 볼 수 있습니다(ppt/ pptx)<img src="../소스 파일/image/down.jpg" alt="다운"></li> 
+                <li><img src="image/kyungsoo/icon_4.jpg" alt="어도브"><b>Adobe Reader</b>PDF형식의 파일을 볼 수 있습니다(pdf)<img src="../소스 파일/image/down.jpg" alt="다운"></li> 
+              </div>
+              <div class="login_center">
+                <li><img src="image/kyungsoo/right_arrow.jpg" alt="우화살표">로그인 관련</li>
+              </div>
+
+            </div>
+          </div> 
+
+        </div>
+      </div>
+
+    </div>
+    
+    <footer id="footer">
+      <section class="info_section">
+        <ul>
+          <li>
+            <p><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000012373">개인정보처리방침</a></p>
+            <p><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014826">이메일무단수집거부</a></p>
+            <p><a href="https://www.academyinfo.go.kr/pubinfo/pubinfo1600/doInit.do?schlId=0000576">대학정보공시</a></p>
+            <p><a href="http://www.corea.ac.kr/program/sitemap/?CUMENUCODE=000000012369">사이트맵</a></p>
+            <p><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014561">전화번호 안내</a></p>
+            <p><a href="http://www.corea.ac.kr/bbs/Content.aspx?CUMENUCODE=000000019039&PageVersion=20220924153324">예·결산공고</a></p>
+            <p><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014557">대학소개</a></p>
+          </li>
+        </ul>
+      </section> 
+      <div id="copyright_bar">
+        <ul>
+          <li>본교 : (우)38695 경상북도 경산시 남천면 남천로 746-10 한국복지사이버대학<br> Tel : 1644-9775 / Fax : 053) 815-6500</li>
+          <li>서울지역학습관 : 서울 강남구 개포로 211, 5층/7층(개포동, 파워엠빌딩)<br>Tel : 1644-9775 / Fax : 02) 577-0085</li>
+          <li>평생교육원 : 서울 강남구 개포로 211, 5층/7층(개포동, 파워엠빌딩)<br>Tel : 1644-9885 / Fax : 02) 577-0085</li>
+          <li>대학고유번호 : 515-82-09324, 대표자 총장 최원석</li>
+          <li>Copyright ⓒ Corea Welfare Cyber College. All Rights Reserved.</li>
+        </ul>
+        <div class="copyright_number">
+          <ul>
+            <li>
+              <p>입학안내</p>
+              <p>1644-9775</p>
+            </li>
+            <li>
+              <p>시간제안내</p>
+              <p>1644-9885</p>
+            </li>
+          </ul>
+        </div>
+        <div id="map_tel">
+          <p>찾아오시는 길</p>
+          <a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000024511"><img src="image/map_min.png" alt="찾아오시는길" id="map_min"></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/flat.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+  <div id="member_login" class="login">
+    <section>
+      <h2><img src="image/logo_noBackColor.png"></h2>
+      <div id="tab_menu">
+        <input type="radio" id="tab1" name="tabs">
+        <label for="tab1">일반</label>
+        <input type="radio" id="tab2" name="tabs" checked>
+        <label for="tab2">공동인증서</label>
+        <input type="radio" id="tab3" name="tabs">
+        <label for="tab3">아이핀</label>
+        <input type="radio" id="tab4" name="tabs">
+        <label for="tab4">네이버</label>
+        <div id="normal" class="tabcontent">
+          <form action="" name="login_form">
+            <span class="head">일반 로그인</span>
+            <ul>
+              <input class="login_id" type="text" placeholder="학번을 입력하세요." tabindex="1" maxlength="20" value="" name="ID" required>
+              <input class="login_pw" type="password" placeholder="학교 비밀번호를 입력하세요." tabindex="2" maxlength="20" value="" name="pwd" required>
+              <li>※ <span style="color: blue; font-weight: bold;">초기 비밀번호</span>는 입학시 원서에 입력된 휴대폰 번호입니다.</li>
+              <button class="loginSubmit" tabindex="3" type="submit">로그인</button>
+            </ul>
+            <ul class="notice_login">
+              <li>◎ 일반 로그인은 홈페이지 이용은 가능하지만 강의실, 시험 등의 서비스는 이용할 수 없습니다.</li>
+            </ul>
+            <a href="http://www.corea.ac.kr/User/UserIDFind.aspx">
+              <span class="login3">아이디·비밀번호 찾기</span>
+            </a>
+            <a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014585">
+              <span class="login3">필수 프로그램</span>
+            </a>
+            <a href="https://sso.corea.ac.kr/measure2/measure_p.htm">
+              <span class="login3">로그인이 안 될 경우</span>
+            </a>
+          </form>
+        </div>
+        <div id="certificate" class="tabcontent">
+          <form action="" name="login_form">
+            <span class="head">공동인증서</span>
+            <ul>
+              <input class="login_id" type="text" placeholder="학번을 입력하세요." tabindex="1" maxlength="20" value="" name="ID" required>
+              <input class="login_pw" type="password" placeholder="학교 비밀번호를 입력하세요." tabindex="2" maxlength="20" value="" name="pwd" required>
+              <li>※ <span style="color: blue; font-weight: bold;">초기 비밀번호</span>는 입학시 원서에 입력된 휴대폰 번호입니다.</li>
+              <button class="loginSubmit" tabindex="3" type="submit">로그인</button>
+            </ul>
+            <ul class="notice_login">
+              <li>◎ 인증서 로그인시 교내 모든 서비스를 이용할 수 있습니다.</li>
+              <li>◎ 인증서가 없을 경우 한국정보인증 <a href="http://www.signgate.com/" target="_blank"><b>[홈페이지]</b></a>에서 발급받아 로그인 하시기 바랍니다.</li>
+              <li>◎ 인증서 유효기간은 1년이오니 확인 후 이용 바랍니다.</li>
+              <li>◎ 공동인증서 보안모듈 설치 후 <span class="reset">새로고침(F5)</span>바랍니다.</li>
+            </ul>
+            <a href="http://www.corea.ac.kr/User/UserIDFind.aspx">
+              <span class="login3">아이디·비밀번호 찾기</span>
+            </a>
+            <a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014585">
+              <span class="login3">필수 프로그램</span>
+            </a>
+            <a href="https://sso.corea.ac.kr/measure2/measure_p.htm">
+              <span class="login3">로그인이 안 될 경우</span>
+            </a>
+          </form>
+        </div>
+        <div id="i-pin" class="tabcontent">
+          <form action="" name="login_form">
+            <span class="head">아이핀</span>
+            <ul>
+              <input class="login_id" type="text" placeholder="학번을 입력하세요." tabindex="1" maxlength="20" value="" name="ID" required>
+              <input class="login_pw" type="password" placeholder="학교 비밀번호를 입력하세요." tabindex="2" maxlength="20" value="" name="pwd" required>
+              <li>※ <span style="color: blue; font-weight: bold;">초기 비밀번호</span>는 입학시 원서에 입력된 휴대폰 번호입니다.</li>
+              <button class="loginSubmit" tabindex="3" type="submit">로그인</button>
+            </ul>
+            <ul class="notice_login">
+              <li>◎ 아이핀 로그인시 교내 모든 서비스를 이용할 수 있습니다.</li>
+            </ul>
+            <a href="http://www.corea.ac.kr/User/UserIDFind.aspx">
+              <span class="login3">아이디·비밀번호 찾기</span>
+            </a>
+            <a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014585">
+              <span class="login3">필수 프로그램</span>
+            </a>
+            <a href="https://sso.corea.ac.kr/measure2/measure_p.htm">
+              <span class="login3">로그인이 안 될 경우</span>
+            </a>
+          </form>
+        </div>
+        <div id="naver" class="tabcontent">
+          <form action="" name="login_form">
+            <span class="head">네이버 인증서 로그인</span>
+            <ul>
+              <input class="login_id" type="text" placeholder="학번을 입력하세요." tabindex="1" maxlength="20" value="" name="ID" required>
+              <input class="login_pw" type="password" placeholder="학교 비밀번호를 입력하세요." tabindex="2" maxlength="20" value="" name="pwd" required>
+              <li>※ <span style="color: blue; font-weight: bold;">초기 비밀번호</span>는 입학시 원서에 입력된 휴대폰 번호입니다.</li>
+              <button class="loginSubmit" tabindex="3" type="submit">로그인</button>
+            </ul>
+            <ul class="notice_login">
+              <li>◎ 네이버 인증서 로그인시 교내 모든 서비스를 이용할 수 있습니다.</li>
+              <li>◎ 네이버인증서 로그인의 경우 스마트폰에 네이버앱이 우선 설치 및 로그인 되어 있어야 합니다.</li>
+              <li>◎ 네이버인증서 로그인의 경우 스마트폰은 <span style="color: red; font-weight: bold;">본인명의</span>의 휴대폰이어야 합니다.</li>
+            </ul>
+            <a href="http://www.corea.ac.kr/User/UserIDFind.aspx">
+              <span class="login3">아이디·비밀번호 찾기</span>
+            </a>
+            <a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014585">
+              <span class="login3">필수 프로그램</span>
+            </a>
+            <a href="https://sso.corea.ac.kr/measure2/measure_p.htm">
+              <span class="login3">로그인이 안 될 경우</span>
+            </a>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <div id="footer">
+      <div>
+        <a href="#">개인정보처리방침</a>
+      </div>
+      <p>(우)38695 경상북도 경산시 남천면 남천로 746-10 한국복지사이버대학</p>
+      <p class="tel">Tel : 1644-9775 Fax : 053) 815-6500</p>
+      <p>Copyright ⓒ Corea Welfare Cyber College. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

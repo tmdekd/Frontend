@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국복지사이버대학</title>
+  <link rel="stylesheet" type="text/css" href="css/reset_jongwu.css">
+  <link rel="stylesheet" type="text/css" href="css/intro_depart.css">
+  <link rel="shortcut icon" href="../project/image/pavicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+</head>
+<body>
+  <div id="wrap">
+    <header>
+      <div id="sub_nav">
+        <div id="markup">
+          <ul>
+            <li><a href="index.html">대학홈페이지</a></li>
+            <li><a href="https://go.corea.ac.kr/">입시홈페이지</a></li>
+          </ul>
+        </div>
+        <div id="util">
+          <ul>
+            <li><a href="login.html">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+            <li><a href="http://www.corea.ac.kr/program/sitemap/?CUMENUCODE=000000012369">사이트맵</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="logo">
+        <img src="image/logo.png" alt="logo">
+      </div>      
+      <nav class="nav">
+        <ul class="gnb_pc">
+          <li>
+            <a href="#">대학소개</a>
+            <ul>
+              <li><a href="#">학교소개</a></li>
+              <li><a href="#">총장인사말</a></li>
+              <li><a href="#">학교법인</a></li>
+              <li><a href="#">대학헌장</a></li>
+              <li><a href="#">규정</a></li>
+              <li><a href="#">대학홍보실</a></li>
+              <li><a href="#">정보공개</a></li>
+              <li><a href="#">입찰공고</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">학과소개</a>
+            <ul>
+              <li><a href="#">인문사회계열</a></li>
+              <li><a href="#">자연과학계열</a></li>
+              <li><a href="#">예체능계열</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">학사운영</a>
+            <ul>
+              <li><a href="#">학칙</a></li>
+              <li><a href="#">학사일정</a></li>
+              <li><a href="#">학사제도</a></li>
+              <li><a href="#">장학제도</a></li>
+              <li><a href="#">병무안내</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">학사지원센터</a>
+            <ul>
+              <li><a href="#">증명서발급</a></li>
+              <li><a href="#">수업도우미</a></li>
+              <li><a href="#">오리엔테이션</a></li>
+              <li><a href="#">원격지원</a></li>
+              <li><a href="#">수강정정신청</a></li>
+              <li><a href="#">개인학적 조회/변경</a></li>
+              <li><a href="#">학번/비밀번호 찾기</a></li>
+              <li><a href="#">재학생수강신청</a></li>
+              <li><a href="#">교원지원서 접수</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">공지사항</a>
+            <ul>
+              <li><a href="#">학사공지</a></li>
+              <li><a href="#">학교소식</a></li>
+              <li><a href="#">일반공지</a></li>
+              <li><a href="#">보도자료</a></li>
+              <li><a href="#">수업활동(실습공지)</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">학생광장</a>
+            <ul>
+              <li><a href="#">학생동정</a></li>
+              <li><a href="#">질의응답</a></li>
+              <li><a href="#">장애학생 고충상담</a></li>
+              <li><a href="#">스터디모임</a></li>
+              <li><a href="#">동아리모임</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">오리엔테이션</a>
+            <ul>
+              <li><a href="#">학기개요</a></li>
+              <li><a href="#">학습자 기본PC사양</a></li>
+              <li><a href="#">공동인증안내</a></li>
+              <li><a href="#">강의실 입장</a></li>
+              <li><a href="#">강의실 구성 및 내용</a></li>
+              <li><a href="#">시험 및 성적평가</a></li>
+              <li><a href="#">과제물</a></li>
+              <li><a href="#">시험응시</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- jQuery 기본 예제를 이용해 열렸다 접혔다하게 함 -->
+      <span class="menu_toggle_btn">
+        전체 메뉴 토글 버튼
+        <nav class="mobile_nav">
+          <ul class="gnb">
+            <li>
+              <a href="#" id="intro_univ">대학소개</a>
+              <ul class="gnb_hidden" id="menu1">
+                <li><a href="#">학교소개</a></li>
+                <li><a href="#">총장인사말</a></li>
+                <li><a href="#">학교법인</a></li>
+                <li><a href="#">대학헌장</a></li>
+                <li><a href="#">규정</a></li>
+                <li><a href="#">대학홍보실</a></li>
+                <li><a href="#">정보공개</a></li>
+                <li><a href="#">입찰공고</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" id="intro_depart">학과소개</a>
+              <ul class="gnb_hidden" id="menu2">
+                <li><a href="#">인문사회계열</a></li>
+                <li><a href="#">자연과학계열</a></li>
+                <li><a href="#">예체능계열</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" id="haksa">학사운영</a>
+              <ul class="gnb_hidden" id="menu4">
+                <li><a href="#">학칙</a></li>
+                <li><a href="#">학사일정</a></li>
+                <li><a href="#">학사제도</a></li>
+                <li><a href="#">장학제도</a></li>
+                <li><a href="#">병무안내</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" id="haksa_jiwon">학사지원센터</a>
+              <ul class="gnb_hidden" id="menu5">
+                <li><a href="#">증명서발급</a></li>
+                <li><a href="#">수업도우미</a></li>
+                <li><a href="#">오리엔테이션</a></li>
+                <li><a href="#">원격지원</a></li>
+                <li><a href="#">수강정정신청</a></li>
+                <li><a href="#">개인학적 조회/변경</a></li>
+                <li><a href="#">학번/비밀번호 찾기</a></li>
+                <li><a href="#">재학생수강신청</a></li>
+                <li><a href="#">교원지원서 접수</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" id="notice">공지사항</a>
+              <ul class="gnb_hidden" id="menu6">
+                <li><a href="#">학사공지</a></li>
+                <li><a href="#">학교소식</a></li>
+                <li><a href="#">일반공지</a></li>
+                <li><a href="#">보도자료</a></li>
+                <li><a href="#">수업활동(실습공지)</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" id="student_square">학생광장</a>
+              <ul class="gnb_hidden" id="menu7">
+                <li><a href="#">학생동정</a></li>
+                <li><a href="#">질의응답</a></li>
+                <li><a href="#">장애학생 고충상담</a></li>
+                <li><a href="#">스터디모임</a></li>
+                <li><a href="#">동아리모임</a></li>
+              </ul>
+            </li>
+            <li class="last">
+              <a href="#" id="orientation">오리엔테이션</a>
+              <ul class="gnb_hidden" id="menu8">
+                <li><a href="#">학기개요</a></li>
+                <li><a href="#">학습자 기본PC사양</a></li>
+                <li><a href="#">공동인증안내</a></li>
+                <li><a href="#">강의실 입장</a></li>
+                <li><a href="#">강의실 구성 및 내용</a></li>
+                <li><a href="#">시험 및 성적평가</a></li>
+                <li><a href="#">과제물</a></li>
+                <li><a href="#">시험응시</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </span>
+    </header>
+      <section class="main">
+        <div class="picture">
+          <img id="schoolpicture" src="image/jongwu/school1.png" alt="학교사진">
+          <img id="lecture" src="image/jongwu/cwcc lec.png" alt="lecture">
+        <div id="container">
+          <div id="main_content">
+            <div class="major_text"><h1>인문사회계열</h1><hr></div>
+            <div class="social_major">
+            <h2>사회복지상담과</h2><img id="picture_3" src="image/jongwu/dept02_i.jpg">
+            </div>
+              <div class="major_introduce">
+                <ul>
+                  <li><img src="image/jongwu/tit_1.jpg"></li>
+                  <li><p><img src="image/jongwu/arrow_3.jpg">복지, 교육, 상담 등 청소년 관련 분야의 전문인력 양성</li>
+                  <li><p><img src="image/jongwu/arrow_3.jpg">청소년관련 프로그램의 수요와 현장적용을 고려한 다양한 유형의 특성화프로그램 개발, 청소년프로그램의 운영관리 및 실무능력 신장</li>
+                  <li><img src="image/jongwu/tit_3.jpg"></li>
+                  <li><p><img src="image/jongwu/arrow_3.jpg">현장실습기관 개념의 "청소년보호센터" 개설ㆍ운영과 이를 통한 현장중심 교육</p></li>
+                  <li><p><img src="image/jongwu/arrow_3.jpg">한국청소년보호연맹, 청소년상담원 내 청소년상담실의 풍부한 경험과 전문지식을 통한 차별화된 청소년보호프로그램</p></li>
+                  <li><p><img src="image/jongwu/arrow_3.jpg">청소년보호센터 내 청소년 쉼터, 지역아동센터와 연계를 통한 청소년관련 실무</p></li>
+                  <li><img src="image/jongwu/tit_5.jpg"></li>
+                  <li><p><img src="image/jongwu/arrow_3.jpg">청소년 복지직
+                    사회복지 전담 공무원 / 청소년수련원 / 청소년독서실 / 청소년심신수련장 / 청소년문화센터 / 종합사회복지관 / 장애인복지관 / 청소년복지시설 / 자원봉사센터 기간요원</p></li>
+                  <li><p><img src="image/jongwu/arrow_3.jpg">청소년 교육직
+                    청소년수련관 / 청소년수련원 / 청소년독서실 / 청소년심신수련장 / 청소년문화센터 / 지역아동센터 / 청소년복지관 / 청소년육성단체 / 청소년관련 방송ㆍ마케팅ㆍ대안교육ㆍ레크리에이션지도자</p></li>
+                  <li><p><img src="image/jongwu/arrow_3.jpg">청소년 상담직
+                    청소년성교육ㆍ문제아동 및 청소년 상담 / 청소년 현장학습 전문가 / 청소년상담실, 청소년인성검사실 / 청소년취업정보실 운영관리</p></li>  
+                  <li><img src="image/jongwu/tit_6.jpg"></li>
+                  <li><img src="image/jongwu/arrow_3.jpg">사회복지사 2급 / 심리상담사 1급 · 2급 / 평생교육사 2급 / 방과후독도교육사 / 청소년지도사 2급 · 3급 / 가족보호사 2급 / 방과후지도사 2급</p></li>
+                </ul>
+              </div>
+              <div class="major_text"><h1>자연과학계열</h1><hr></div>
+              <div class="social_major">
+              <h2>심리상담치료학과</h2><img id="picture_3" src="image/jongwu/sds01_i.jpg">
+              </div>
+                <div class="major_introduce">
+                  <ul>
+                    <li><img src="image/jongwu/tit_1.jpg"></li>
+                    <li><p><img src="image/jongwu/arrow_3.jpg">인간의 인지, 정서, 행동에 대한 과학적 교육을 통한 상담심리사 양성</li>
+                    <li><p><img src="image/jongwu/arrow_3.jpg">아동과 청소년을 대상으로 한 학교상담사, 청소년전문가 양성</li>
+                    <li><img src="image/jongwu/tit_3.jpg"></li>
+                    <li><p><img src="image/jongwu/arrow_3.jpg">다양한 상담프로그램과 상담이론과 실제적 상담기술을 발굴·보급하여 교육과정에 반영함</p></li>
+                    <li><p><img src="image/jongwu/arrow_3.jpg">실제 상담장면에서 상담을 실시할 수 있도록 구체적인 상담기법 교육과 실용적인 교과목운영을 통하여 실천기술 향상</p></li>
+                    <li><p><img src="image/jongwu/arrow_3.jpg">전국 상담관련 기관과의 네트워킹을 통한 현장실습과 슈퍼비전을 실시하여 현장적응능력 향상</p></li>
+                    <li><img src="image/jongwu/tit_5.jpg"></li>
+                    <li><p><img src="image/jongwu/arrow_3.jpg">
+                      상담심리분야: 청소년상담원, 청소년지원센터, 심리연구소, 아동, 청소년 및 성인상담 기관에 취업상담센터 개소</p></li>
+                    <li><p><img src="image/jongwu/arrow_3.jpg">
+                      교육분야: 시,군,구 고용안정지원센터, 여성인력개발센터, 청소년수련관, 청소년쉼터, 취업지원센터, 직업전문학교 등 문제예방, 교육 지도상담</p></li>
+                    <li><p><img src="image/jongwu/arrow_3.jpg">
+                      회복지기관: 사회복지관, 아동보호전문기관, 보육시설, 장애인복지관, 지역재활센터</p></li>  
+                    <li><p><img src="image/jongwu/arrow_3.jpg">
+                        군상담, 기업상담, 다문화가정상담 등</p></li>
+                    <li><p><img src="image/jongwu/arrow_3.jpg">
+                          4년제 대학 편입</p></li>
+                    <li><img src="image/jongwu/tit_6.jpg"></li>
+                    <li><img src="image/jongwu/arrow_3.jpg">사회복지사 2급 / 평생교육사 2급 / 직업상담사 2급 / 청소년상담사 3급 / 방과후지도사 2급 / 독도교육사 / 심리상담사 1·2급 /
+                    상담심리지도사 2급 / 임상예술심리상담사 3급</p></li>
+                  </ul>
+                </div>
+                <div class="major_text"><h1>예체능계열</h1><hr></div>
+                <div class="social_major">
+                <h2>생활체육복지학과</h2><img id="picture_3" src="image/jongwu/training_i.jpg">
+                </div>
+                  <div class="major_introduce">
+                    <ul>
+                      <li><img src="image/jongwu/tit_5.jpg"></li>
+                      <li><p><img src="image/jongwu/arrow_3.jpg">
+                        아동·청소년·노인,장애인 등 사회복지관의 여가스포츠복지전문가</p></li>
+                      <li><p><img src="image/jongwu/arrow_3.jpg">
+                        초·중·고등학교, 어린이집·유치원, 문화센터 등 스포츠전담교사</p></li>
+                      <li><p><img src="image/jongwu/arrow_3.jpg">
+                        사회복지전담공무원, 평생교육시설 평생교육사, 청소년복지시설 청소년지도사</p></li>
+                      <li><img src="image/jongwu/tit_6.jpg"></li>
+                      <li><img src="image/jongwu/arrow_3.jpg">사회복지사 2급, 평생교육사 2급, 청소년지도사 3급, 생활스포츠지도사 2급(종목별일반, 유소년, 노인, 장애인</li>
+                    </ul>
+                  </div>
+          </div>
+        
+          <div id="tabMenu">
+            <input type="radio" id="tab1" name="tabs" checked>
+            <label for="tab1">인문사회계열</label>
+            <input type="radio" id="tab2" name="tabs" checked>
+            <label for="tab2">자연과학계열</label>
+            <input type="radio" id="tab3" name="tabs" checked>
+            <label for="tab3">예체능계열</label>
+            <div id="social" class="tabContent">
+              <ul>
+                <a href="http://awc.corea.ac.kr/"><li>사회복지상담학과</li></a>
+                <a href="http://mcs.corea.ac.kr/"><li>영유아보육학과</li></a>
+                <a href="http://cw.corea.ac.kr/"><li>아동복지학과</li></a>
+                <a href="http://wm.corea.ac.kr/"><li>복지경영학과</li></a>
+                <a href="http://amw.corea.ac.kr/"><li>노인복지학과</li></a>
+                <a href="http://pcw.corea.ac.kr/"><li>생활환경복지학과</li></a>
+                <a href="http://dms.corea.ac.kr/"><li>경찰행정복지학과</li></a>
+                <a href="http://swf.corea.ac.kr/"><li>군사회복지학과</li></a>
+                <a href="http://swf.corea.ac.kr/"><li>사회복지학과</li></a>
+                <a href="http://dokdo.corea.ac.kr/"><li>독도학과</li></a>
+              </ul>
+            </div>
+            <div id="sience" class="tabContent">
+              <ul>
+                <a href="http://sds.corea.ac.kr/"><li>심리상담치료학과</li></a>
+                <a href="http://awf.corea.ac.kr/"><li>동식물복지학과</li></a>
+              </ul>
+            </div>
+            <div id="entertainment" class="tabContent">
+              <ul>
+                <a href="http://sfa.corea.ac.kr/"><li>생활체육복지학과</li></a>
+              </ul>
+            </div>
+            <div id="quick_menu">
+              <a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014579"><img src="image/jongwu/quick_menu_img01_off.png">증명서 발급</a>
+              <a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014572"><img src="image/jongwu/quick_menu_img02_off.png">학사 일정</a>
+              <a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014572"><img src="image/jongwu/quick_menu_img03_off.png">입학 안내</a>
+              <a href="http://www.corea.ac.kr/register/RegisterForm.aspx?CUMENUCODE=000000015679"><img src="image/jongwu/quick_menu_img04_off.png">등록금 납부</a>
+              <a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014585"><img src="image/jongwu/quick_menu_img05_off.png">수업도우미</a>
+              <a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014585"><img src="image/jongwu/quick_menu_img06_off.png">전자도서관</a>
+              <a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000024511"><img src="image/jongwu/quick_menu_img07_off.png">찾아오시는길</a>
+              <a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014561"><img src="image/jongwu/quick_menu_img08_off.png">전화번호안내</a>
+              <a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014561"><img src="image/jongwu/quick_menu_img09_off.png">예/결산공고</a>
+            </div>
+            <div id="aplly_button"><img src="image/jongwu/apply_button.png"></div>
+          </div>
+        <div id="introduce">
+          <div class="introduce_1"><img src="image/jongwu/slidepicture-1.png"><p>학사 공지</p></div>
+          <div class="right_box">
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000014589&MENUCODE=000000014589&CONTENTNO=203011&PageVersion=20220926131026" target="_blank"><p>22년 2학기 CWCC멘토링 프로그램 참여자 모집</p></a>
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000014589&MENUCODE=000000014589&CONTENTNO=202939&PageVersion=20220926131026" target="_blank"><p>‘제8회 한국복지사이버대학 학업수기 공모’..</p></a>
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000014589&MENUCODE=000000014589&CONTENTNO=202532&PageVersion=20220926131026" target="_blank"><p>2022학년도 2학기 수강정정 기간 및 폐강과목..</p></a>
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000014589&MENUCODE=000000014589&CONTENTNO=202336&PageVersion=20220926131026" target="_blank"><p>2022학년도 2학기 신입생 『자기계발형 맞춤식..</p></a>
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000014589&MENUCODE=000000014589&CONTENTNO=202844&PageVersion=20220926131026" target="_blank"><p>2022학년도 2학기 산업체･군위탁생 재직상황..</p></a>
+          </div>
+          <div class="introduce_1"><img src="image/jongwu/slidepicture-2.png"><p>학교 소식</p></div>
+          <div class="right_box">
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000015687&MENUCODE=000000015687&CONTENTNO=202337&PageVersion=20220926131026" target="_blank"><p>2022학년도 2학기 신입생 『자기계발형 맞춤식..</p></a>
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000015687&MENUCODE=000000015687&CONTENTNO=201436&PageVersion=20220926131026" target="_blank"><p>2022학년도 2학기 군위탁 일정 안내</p></a>
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000015687&MENUCODE=000000015687&CONTENTNO=201271&PageVersion=20220926131026" target="_blank"><p>2022학년도 2학기 모집요강 안내</p></a>
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000015687&MENUCODE=000000015687&CONTENTNO=201273&PageVersion=20220926131026" target="_blank"><p>2022학년도 2학기 산업체위탁교육 계약서 양식</p></a>
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000015687&MENUCODE=000000015687&CONTENTNO=199804&PageVersion=20220926131026" target="_blank"><p>2022학년도 1학기 신입생 『자기계발형 맞춤식..</p></a>
+          </div>
+          <div class="introduce_1"><img src="image/jongwu/slidepicture-3.png"><p>일반 공지</p></div>
+          <div class="right_box">
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000015687&MENUCODE=000000015687&CONTENTNO=202337&PageVersion=20220926131026" target="_blank"><p>2022학년도 6차 교원 초빙 공고</p></a>
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000015687&MENUCODE=000000015687&CONTENTNO=201436&PageVersion=20220926131026" target="_blank"><p>교직원 채용 공고(육아휴직 대체인력)</p></a>
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000015687&MENUCODE=000000015687&CONTENTNO=201271&PageVersion=20220926131026" target="_blank"><p>22년 2학기 CWCC멘토링 프로그램 참여자 모집</p></a>
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000015687&MENUCODE=000000015687&CONTENTNO=201273&PageVersion=20220926131026" target="_blank"><p>‘제8회 한국복지사이버대학 학업수기 공모’ 수상자 ..</p></a>
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000015687&MENUCODE=000000015687&CONTENTNO=199804&PageVersion=20220926131026" target="_blank"><p>2022학년도 2학기 수강정정 기간 및 폐강과목 안내</p></a>
+          </div>
+          <div class="introduce_1"><img src="image/jongwu/slidepicture-4.png"><p>입시 공지</p></div>
+          <div class="right_box">
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000015687&MENUCODE=000000015687&CONTENTNO=202337&PageVersion=20220926131026" target="_blank"><p>2022학년도 2학기 신입생 『자기계발형 맞춤식 자격증..</p></a>
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000015687&MENUCODE=000000015687&CONTENTNO=201436&PageVersion=20220926131026" target="_blank"><p>2022학년도 2학기 군위탁 일정 안내</p></a>
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000015687&MENUCODE=000000015687&CONTENTNO=201271&PageVersion=20220926131026" target="_blank"><p>2022학년도 2학기 모집요강 안내</p></a>
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000015687&MENUCODE=000000015687&CONTENTNO=201273&PageVersion=20220926131026" target="_blank"><p>2022학년도 2학기 산업체위탁교육 계약서 양식</p></a>
+            <a href="http://www.corea.ac.kr/bbs/ContentView.aspx?CUMENUCODE=000000015687&MENUCODE=000000015687&CONTENTNO=199804&PageVersion=20220926131026" target="_blank"><p>2022학년도 1학기 신입생 『자기계발형 맞춤식 자격증..</p></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer id="footer">
+      <section class="info_section">
+        <ul>
+          <li>
+            <p><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000012373">개인정보처리방침</a></p>
+            <p><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014826">이메일무단수집거부</a></p>
+            <p><a href="https://www.academyinfo.go.kr/pubinfo/pubinfo1600/doInit.do?schlId=0000576">대학정보공시</a></p>
+            <p><a href="http://www.corea.ac.kr/program/sitemap/?CUMENUCODE=000000012369">사이트맵</a></p>
+            <p><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014561">전화번호 안내</a></p>
+            <p><a href="http://www.corea.ac.kr/bbs/Content.aspx?CUMENUCODE=000000019039&PageVersion=20220924153324">예·결산공고</a></p>
+            <p><a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000014557">대학소개</a></p>
+          </li>
+        </ul>
+      </section> 
+      <div id="copyright_bar">
+        <ul>
+          <li>본교 : (우)38695 경상북도 경산시 남천면 남천로 746-10 한국복지사이버대학<br> Tel : 1644-9775 / Fax : 053) 815-6500</li>
+          <li>서울지역학습관 : 서울 강남구 개포로 211, 5층/7층(개포동, 파워엠빌딩)<br>Tel : 1644-9775 / Fax : 02) 577-0085</li>
+          <li>평생교육원 : 서울 강남구 개포로 211, 5층/7층(개포동, 파워엠빌딩)<br>Tel : 1644-9885 / Fax : 02) 577-0085</li>
+          <li>대학고유번호 : 515-82-09324, 대표자 총장 최원석</li>
+          <li>Copyright ⓒ Corea Welfare Cyber College. All Rights Reserved.</li>
+        </ul>
+        <div class="copyright_number">
+          <ul>
+            <li>
+              <p>입학안내</p>
+              <p>1644-9775</p>
+            </li>
+            <li>
+              <p>시간제안내</p>
+              <p>1644-9885</p>
+            </li>
+          </ul>
+        </div>
+        <div id="map_tel">
+          <p>찾아오시는 길</p>
+          <a href="http://www.corea.ac.kr/common/Content.aspx?CUMENUCODE=000000024511"><img src="image/map_min.png" alt="찾아오시는길" id="map_min"></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+   
+  <script src="js/jquery.min.js"></script>
+  <script src="js/flat.min.js"></script>
+</body>
+</html>

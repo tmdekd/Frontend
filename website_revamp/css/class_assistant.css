@@ -1,0 +1,346 @@
+/* 모바일용 CSS */
+/* 기본 CSS */
+#wrap {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  margin: 0 auto;
+}
+/* 헤더 영역 CSS */
+.header {
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+#sub_nav {
+  display: none;
+}
+#logo {
+  order: 1;
+  padding: 10px 0;
+}
+.nav {
+  display: none;
+}
+.mobile_nav {
+  position: absolute;
+  order: 2;
+  width: 350px;
+  display: none;
+  z-index: 100;
+  top: 55px;
+  right: 0px;
+}
+.gnb_hidden {
+  display: none;
+}
+.gnb_hidden li {
+  background: #393939;
+  border-bottom: 1px solid white;
+  float: left;
+}
+.gnb li {
+  display: flex;
+  width: 100%;
+  background: #393939;
+  border-bottom: 1px solid white;
+}
+.gnb li.last {
+  border: none;
+}
+.gnb li a {
+  width: 100%;
+  padding: 15px 0;
+  font-size: 0.938em;
+  font-size: 0.938rem;
+  text-indent: 20px;
+  text-indent: 1.250rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  font-size: 14px;
+}
+.menu_toggle_btn {
+  display: block;
+  width: 30px;
+  width: 1.875rem;
+  height: 30px;
+  height: 1.875rem;
+  margin-top: -55px;
+  margin-right: 10px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  position: relative;
+  float: right;
+  text-indent: -9999px;
+  background:url(../image/main_toggle.png) no-repeat;
+  cursor: pointer;
+}
+
+
+
+#main .mainwrap .left_container {
+  display: inline;
+  float: left;
+}
+
+.left_container {
+  display: inline;
+}
+
+#center_container {
+  float: left;
+  left: 200px;
+}
+#title_center {
+  left: 500px;
+}
+
+.table_center th, td {
+  border:1px solid #ccc;
+  border-collapse: collapse;
+}
+.table_center th, td {
+  width:200px;  /* 셀의 너비 */
+  padding:10px; /* 셀 테두리와 내용 사이의 간격(패딩) */
+}
+thead, tfoot { 
+  background : #eeeeee;  /* thead와 tfoot의 배경 색 */
+}
+
+.top_notice {
+  border-bottom: 5px solid ;
+}
+
+.board_wrap {
+  padding-top: 30px;
+}
+
+.notice_caption {
+  text-align: left;
+}
+
+.board_list {
+  border-collapse: collapse;
+  width: 90%;
+  border-top: 1px solid navy;
+
+}
+
+.board_list a {
+  text-decoration: none;
+}
+
+.board_list th, td {
+  border: 1px solid #999;
+  text-align: center;
+  padding: 10px;
+}
+
+.board_list tbody tr td:nth-child(2) {
+  text-align: left;
+
+}
+
+.board_wrap .paging {
+  margin-top: 20px;
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+
+.board_wrap .paging a {
+  margin-left: 10px;
+}
+
+.board_wrap .paging a:first-child {
+  margin-left: 0;
+}
+
+.board_wrap .paging a:nth-child(6) {
+  margin-left: 600px;
+}
+
+.board_wrap .paging a:nth-child(15) {
+  margin-left: 500px;
+}
+
+
+#footer {
+  background: #2e3793;
+}
+#footer .info_section {
+  order: 1;
+  width: 100%;
+  border-bottom: 1px solid #2e3793;
+}
+#footer .info_section ul {
+  display: flex;
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+#footer .info_section ul li p {
+  padding: 15px;
+  float: left;
+}
+#footer .info_section ul li a {
+  /* 안정적으로 배치하기 위함 */
+  display: block;
+  color: white;
+}
+#footer #copyright_bar {
+  background-image: url(../image/map_icon.png) right center;
+}
+#footer #copyright_bar ul {
+  padding: 5px;
+}
+#footer #copyright_bar ul li {
+  padding: 5px;
+  color: white;
+  line-height: 25px;
+  font-size: small;
+}
+#footer #copyright_bar ul li:last-child {
+  font-size: small;
+}
+#footer #copyright_bar .copyright_number {
+  margin-bottom: 20px;
+  display: inline-block;
+}
+#footer #copyright_bar .copyright_number p {
+  margin-bottom: 15px;
+}
+#footer #copyright_bar .copyright_number ul li p:first-child {
+  font-size: 20px;
+}
+#footer #copyright_bar .copyright_number ul li {
+  font-size: 35px;
+  padding-right: 15px;
+  float: left;
+}
+#footer #copyright_bar #map_tel {
+  display: none;
+}
+
+
+/* 태블릿용 CSS */
+@media all and (min-width:768px) {
+/* 기본 CSS */
+#wrap {
+  width: 100%;
+}
+#sub_nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2e3793;
+  color: white;
+  padding: 10px 0;
+}
+#sub_nav ul li {
+  display: inline;
+}
+#sub_nav ul a:hover {
+  color: black;
+  background-color: white;
+  font-weight: 500;
+}
+#sub_nav ul li a {
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
+.menu_toggle_btn {
+  top: 3px;
+  right: 5px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+}
+.nav {
+  display: none;
+}
+ 
+  #footer #copyright_bar {
+    position: relative;
+  }
+  #footer #copyright_bar #map_tel {
+    position: absolute;
+    right: 50px;
+    bottom: 80px;
+    display: inline;
+  }
+  #footer #copyright_bar #map_tel p {
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  #footer #copyright_bar #map_tel #map_min {
+    width: 200px;
+    height: 200px;  
+  }
+}
+
+/* PC용 CSS */
+@media all and (min-width:960px) {
+/* 기본 CSS */
+#wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.nav {
+  text-align: center;
+  display: block;
+}
+.mobile_nav {
+  display: none;
+}
+.gnb_pc {
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  text-align: center;
+  background-color: #393939;
+}
+.gnb_pc > li {
+  float:left;  /* 메뉴 항목을 왼쪽으로 플로팅 */ 
+  position: relative;  /* 서브 메뉴를 absolute로 하기 위해, 이 부분을 relative로 */  
+  margin: 0 auto;
+  line-height: 60px;
+  width: 100px;
+}
+.gnb_pc > li > a{
+  display:block;  /* 링크 텍스트는 블록으로 */ 
+  color:#fff;  /* 글자 색 */
+  font-weight:600;  /* 글자 굵기 */
+}
+.gnb_pc > li > a > span {
+  font-size : 0.5em;   /* 서브 메뉴가 있는 항목에 화살표 표시 */   
+}
+
+.gnb_pc > li > ul { /* 서브 메뉴 스타일 */
+  display: none;  /* 서브 메뉴 처음에는 화면에 안 보이게 */ 
+  position: absolute;  /* 서브 메뉴 포지셔닝 */ 
+  width:160px;
+  left: -10px;
+  background:rgba(255,255,255,0.8);  /* 슬라이드 쇼 비치도록 배경 색 조절 */  
+  margin:0;
+}
+.gnb_pc > li > ul > li {    
+  padding: 5px auto;   /* 서브 메뉴 항목 */
+}
+.gnb_pc > li > ul > li > a { 
+  font-size:16px;
+  color:#000;  
+}
+.gnb_pc > li:hover > ul {
+  display: block;  /* 메인 메뉴 항목 위로 오버하면 서브 메뉴 표시 */
+  z-index:10;  /* 슬라이드 쇼에 가리지 않게 조절 */ 
+}
+
+.menu_toggle_btn {
+  display: none;
+}
+}
