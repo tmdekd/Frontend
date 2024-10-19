@@ -19,14 +19,14 @@
 
 ## 🖼️ 프로젝트 리스트
 
-### 1. **프로젝트 이름 1**
-- **설명**: 이 프로젝트는 React를 사용한 웹 애플리케이션으로, 사용자 인터페이스를 직관적으로 디자인하였습니다.
-- **기술 스택**: React, Styled-components, AWS
+### 1. **한국사이버복지대학교 웹사이트 리뉴얼 프로젝트**
+- **설명**: (현)한국사이버복지대학교의 웹사이트를 현대적이고 사용자 친화적인 인터페이스로 개선하고, 반응형 디자인을 적용하여 접근성을 높이기 위한 프로젝트입니다. 모바일과 PC 화면에서 모두 최적화된 UI를 제공하며, HTML, CSS, 자바스크립트와 같은 최신 웹 기술을 적용했습니다.
+- **기술 스택**: JavaScript, HTML5, CSS3, Bootstrap, GitHub
 
-|화면 명|
+|한국복지사이버대학교|
 |:---:|
-|<img src="https://user-images.githubusercontent.com/80824750/208456048-acbf44a8-cd71-4132-b35a-500047adbe1c.gif" width="450"/>|
-|홈페이지 메인 화면.|
+|<img src="https://github.com/user-attachments/assets/a30a32c9-5734-40f7-bc6c-1bb164599931" width="450"/>|
+|메인 페이지 PC 화면.|
 
 <br />
 
@@ -34,22 +34,14 @@
 
 ### Front-end
 <div>
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/JavaScript.png?raw=true" width="80">
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/React.png?raw=true" width="80">
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/HTML5.png?raw=true" width="80">
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/CSS3.png?raw=true" width="80">
-</div>
-
-### Infra
-<div>
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/AWSEC2.png?raw=true" width="80">
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/Docker.png?raw=true" width="80">
+  <img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/JavaScript.png?raw=true" width="80">
+  <img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/HTMLCSS.png?raw=true" width="80">
+  <img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/Bootstrap.png?raw=true" width="80">
 </div>
 
 ### Tools
 <div>
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/Github.png?raw=true" width="80">
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/Notion.png?raw=true" width="80">
+  <img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/Github.png?raw=true" width="80">
 </div>
 
 <br />
