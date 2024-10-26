@@ -14,7 +14,6 @@
 </head>
 <body class="body-chat">
   <header class="top-header chat-header">
-    <!-- 상단 헤더 영역으로, 배터리, 시간, 와이파이 아이콘 등을 표시 -->
     <div class="header__top">
       <div class="header__column">
         <i class="fa fa-plane"></i>
@@ -30,7 +29,6 @@
       </div>
     </div>
     <div class="header__bottom">
-      <!-- 채팅방 이름과 검색 및 메뉴 버튼을 포함하는 하단 헤더 영역 -->
       <div class="header__column">
         <a href="chats.html">
           <i class="fa fa-chevron-left fa-lg"></i>
@@ -46,13 +44,11 @@
     </div>
   </header>
   <main class="chat">
-    <!-- 채팅 시작을 알리는 구분선 -->
     <div class="date-divider">
       <span class="date-divider__text">Chat Started</span>
     </div>
   </main>
   <div class="type-message">
-    <!-- 파일 첨부 및 메시지 입력을 위한 하단 입력창 -->
     <i class="fa fa-plus fa-lg" onclick="document.getElementById('image-input').click();"></i>
     <div class="type-message__input">
       <input type="text" id="message-input" placeholder="메시지 입력..." autofocus>
@@ -63,7 +59,8 @@
 
   <script>
     let myName;
-    // 사용자의 이름을 요청하고 환영 메시지를 표시하는 함수
+    let ws;
+
     async function requestUserName() {
       const { value: name } = await Swal.fire({
         icon: 'question',
@@ -79,93 +76,185 @@
           }
         }
       });
-    
+      
       myName = name;
-      // 환영 메시지를 표시하고 닫힌 후 입력창에 포커스
-      Swal.fire({
-        icon: 'success',
-        title: '환영합니다, ' + myName + '님!',
-        text: '채팅에 입장하셨습니다.',
-      }).then(() => {
-        document.getElementById('message-input').focus();
-      });
+      initializeChat(myName);
     }
-    
-    requestUserName();
 
-    const user_id = 0; // 사용자 고유 ID를 설정
+    function initializeChat(user_id) {
+      ws = new WebSocket('ws://192.168.216.47/api/chat?user_id=' + user_id);
 
-    // WebSocket 연결을 생성하고, 서버와의 통신을 설정
-    const ws = new WebSocket('ws://192.168.216.47/api/chat?user_id=' + user_id);
-
-    ws.onopen = () => {
-      console.log("WebSocket 연결 성공!");
-    };
-
-    // WebSocket으로 수신된 메시지를 화면에 추가하는 로직
-    ws.onmessage = (event) => {
-      const data = JSON.parse(event.data);
-      const chatMain = document.querySelector('main.chat');
-      const messageElement = document.createElement('div');
-      const time = new Date().toLocaleTimeString();
-    
-      console.log("data.message : ", data.message);
-
-      // deepfake 이미지가 감지되면 경고창을 표시
-      if (data.message == 'deepfake') {
-        Swal.fire({
-          icon: 'warning',
-          title: '경고!',
-          text: '이 이미지는 deepfake로 식별되었습니다. 주의하세요!',
-          confirmButtonText: '확인'
+      ws.onopen = async () => {
+        console.log("WebSocket 연결 성공!");
+        await Swal.fire({
+          icon: 'success',
+          title: '환영합니다, ' + myName + '님!',
+          text: '채팅에 입장하셨습니다.',
         });
-        return;
-      }
-    
-      // URL이 이미지인지 여부를 확인하는 함수
-      const isImageURL = (url) => {
-        return /\.(jpeg|jpg|gif|png|webp|bmp)$/.test(url);
+        document.getElementById('message-input').focus();
+      };
+
+      ws.onmessage = async (event) => {
+        const data = JSON.parse(event.data);
+        console.log("type: ", data.type);
+        
+        if (data.type === 'disconnect') {
+          console.warn("서버에서 연결 해제 요청 수신");
+          ws.close();
+        }
       };
     
-      // 메시지가 나로부터 온 것인지 여부에 따라 스타일을 변경하여 채팅창에 추가
-      if (data.user_id === user_id) {
-        messageElement.className = 'chat__message chat__message-from-me';
-        messageElement.innerHTML = `<span class="chat__message-time">${time}</span><span class="chat__message-body">${data.message}</span>`;
-      } else {
-        messageElement.className = 'chat__message chat__message-to-me';
-        if (isImageURL(data.message)) {
-          // 이미지 URL이면 이미지 태그로 표시
-          messageElement.innerHTML = `
-            <img src="images/user.png" alt="" class="chat-message-avatar">
-            <div class="chat__message-center">
-              <h3 class="chat__message-username">User ${data.user_id}</h3>
-              <img src="${data.message}" alt="Image" class="chat__image" style="width: 40vw;">
-            </div>
-            <span class="chat__message-time">${time}</span>
-          `;
-        } else {
-          // 일반 텍스트 메시지일 경우 텍스트로 표시
-          messageElement.innerHTML = `
-            <img src="images/user.png" alt="" class="chat-message-avatar">
-            <div class="chat__message-center">
-              <h3 class="chat__message-username">User ${data.user_id}</h3>
-              <span class="chat__message-body">${data.message}</span>
-            </div>
-            <span class="chat__message-time">${time}</span>
-          `;
-        }
-      }
+      ws.onerror = async () => {
+        console.error("WebSocket 연결 오류 발생");
+        await Swal.fire({
+          icon: 'error',
+          title: '연결 오류!',
+          text: '채팅 서버에 연결할 수 없습니다. 다시 시도해주세요.',
+        });
+        requestUserName();
+      };
     
-      chatMain.appendChild(messageElement);
-      chatMain.scrollTop = chatMain.scrollHeight; // 새 메시지 추가 후 채팅창을 하단으로 스크롤
-    };    
+      ws.onclose = async () => {
+        console.warn("WebSocket 연결이 닫혔습니다.");
+        await Swal.fire({
+          icon: 'error',
+          title: '연결 종료',
+          text: '서버와의 연결이 끊어졌습니다. 다시 시도해주세요.',
+        });
+        requestUserName(); // 연결이 닫혔을 때 사용자 이름을 다시 요청
+      };
 
-    // WebSocket 에러 발생 시 콘솔에 표시
-    ws.onerror = (error) => {
-      console.error("WebSocket 오류:", error);
-    };
+      let img_list = [];
+      ws.onmessage = async (event) => {
+        const data = JSON.parse(event.data);
+        const name = data.user_id;
+        const message = data.message;
+        const type = data.type; 
+        const chatMain = document.querySelector('main.chat');
+        const messageElement = document.createElement('div');
+        const time = new Date().toLocaleTimeString();
 
-    // 입력 필드의 내용을 WebSocket을 통해 전송하는 함수
+        if (name === myName) {
+          messageElement.className = 'chat__message chat__message-from-me';
+          if (type === 'deepfake') {
+            img_list.push(message);
+            console.log("img_list: ", img_list);
+            const confirmation = await Swal.fire({
+              icon: 'warning',
+              title: '딥페이크 이미지 삭제',
+              html: '딥페이크 이미지가 탐지되었습니다.<br>해당 이미지가 불법 딥페이크물이 아님을<br>확신하며 이에 대한 법적 책임을 진다는 것을<br>확인하겠습니까?',
+              showCancelButton: true,
+              confirmButtonText: '확인',
+              cancelButtonText: '취소',
+            }).then((result) => {
+              if (result.isConfirmed) {
+                for (let i = 0; i < img_list.length; i++) {
+                  console.log("img_list : ", img_list[i]);
+                  
+                  // 요소를 감쌀 div 생성
+                  let messageWrapper = document.createElement("div");
+                  messageWrapper.className = "chat__message-wrapper";
+
+                  // 시간 요소 추가
+                  let timeElement = document.createElement("span");
+                  timeElement.className = "chat__message-time";
+                  timeElement.textContent = time;
+                  messageWrapper.appendChild(timeElement);
+
+                  // 이미지 요소 추가
+                  let img = document.createElement("img");
+                  img.src = img_list[i];
+                  img.alt = "Image";
+                  img.className = "chat__image";
+                  img.style.width = "40vw";
+                  messageWrapper.appendChild(img);
+
+                  // messageWrapper를 messageElement에 추가
+                  messageElement.appendChild(messageWrapper);
+                }
+                
+              } else {
+                return false;
+              }
+            });
+          } else if (type === 'nsfw') {
+            Swal.fire({
+              icon: 'warning',
+              html: '부적절한 콘텐츠로 의심되는 이미지가 감지되어<br>업로드가 제한됩니다.'
+            });
+          } else {
+            if (/\.(jpeg|jpg|gif|png|webp|bmp)$/.test(message)) {
+              messageElement.innerHTML = `<span class="chat__message-time">${time}</span><img src="${message}" alt="Image" class="chat__image" style="width: 40vw;">`;
+            } else {
+              messageElement.innerHTML = `<span class="chat__message-time">${time}</span><span class="chat__message-body">${message}</span>`;
+            }
+          }
+        } else {
+          messageElement.className = 'chat__message chat__message-to-me';
+          const displayName = name || `User ${name}`;
+          
+          console.log("type: ", type);
+          if (type === 'deepfake') {
+            console.log("type2: ", type);
+            const confirmation = await Swal.fire({
+              icon: 'warning',
+              title: '딥페이크 이미지 삭제',
+              html: '딥페이크 이미지가 탐지되었습니다.<br>해당 이미지가 불법 딥페이크물이 아님을<br>확신하며 이에 대한 법적 책임을 진다는 것을<br>확인하겠습니까?',
+              showCancelButton: true,
+              confirmButtonText: '확인',
+              cancelButtonText: '취소',
+            });
+            
+            
+            if (confirmation.isConfirmed) {
+              messageElement.innerHTML = `
+                <img src="images/user.png" alt="" class="chat-message-avatar">
+                <div class="chat__message-center">
+                  <h3 class="chat__message-username">${displayName}</h3>
+                  <img src="${message}" alt="Image" class="chat__image" style="width: 40vw;">
+                </div>
+                <span class="chat__message-time">${time}</span>
+              `;
+            } else {
+              return;
+            }
+          } else if (type === 'nsfw') {
+            Swal.fire({
+              icon: 'warning',
+              html: '부적절한 콘텐츠로 의심되는 이미지가 감지되어<br>업로드가 제한됩니다.'
+            });
+          } else {
+            if (/\.(jpeg|jpg|gif|png|webp|bmp)$/.test(message)) {
+              messageElement.innerHTML = `
+                <img src="images/user.png" alt="" class="chat-message-avatar">
+                <div class="chat__message-center">
+                  <h3 class="chat__message-username">${displayName}</h3>
+                  <img src="${message}" alt="Image" class="chat__image" style="width: 40vw;">
+                </div>
+                <span class="chat__message-time">${time}</span>
+              `;
+            } else {
+              messageElement.innerHTML = `
+                <img src="images/user.png" alt="" class="chat-message-avatar">
+                <div class="chat__message-center">
+                  <h3 class="chat__message-username">${displayName}</h3>
+                  <span class="chat__message-body">${message}</span>
+                </div>
+                <span class="chat__message-time">${time}</span>
+              `;
+            }
+          }
+        }
+
+        chatMain.appendChild(messageElement);
+        chatMain.scrollTop = chatMain.scrollHeight;
+      };
+
+      ws.onerror = (error) => {
+        console.error("WebSocket 오류:", error);
+      };
+    }
+
     function sendMessage() {
       const input = document.getElementById('message-input');
       const message = input.value.trim();
@@ -175,7 +264,6 @@
       }
     }
 
-    // 엔터 키 입력 시 메시지 전송
     document.getElementById('message-input').addEventListener('keypress', function(event) {
       if (event.key === 'Enter') {
         event.preventDefault();
@@ -183,34 +271,32 @@
       }
     });
 
-    // 여러 이미지를 업로드하여 서버에 전송하는 함수
     async function sendImages() {
       const imageInput = document.getElementById('image-input');
       const files = imageInput.files;
       const chatMain = document.querySelector('main.chat');
-    
+      
       if (files.length > 0) {
         for (let i = 0; i < files.length; i++) {
           const file = files[i];
           const formData = new FormData();
           formData.append("files", file);
+          
+          const encodedName = encodeURIComponent(myName);
     
           try {
-            const response = await fetch("http://192.168.216.47:8000/api/upload-image/?user_id=" + user_id, {
+            const response = await fetch("http://192.168.216.47:8000/api/upload-image/?user_id=" + encodedName, {
               method: "POST",
               body: formData
             });
             const result = await response.json();
     
             if (response.ok) {
-              console.log("Image upload success:", result.image_url);
+              console.log("success");
     
-              // 이미지가 추가된 후에 스크롤을 이동
-              setTimeout(() => {
-                chatMain.scrollTop = chatMain.scrollHeight;
-              }, 100); // 약간의 딜레이를 주어 이미지 추가가 완료된 후 스크롤
+              // 이미지가 추가된 후 스크롤을 하단으로 이동
+              chatMain.scrollTop = chatMain.scrollHeight;
             } else {
-              console.error("Image upload failed:", result.message);
               Swal.fire({
                 icon: 'warning',
                 title: '이미지 업로드 실패!',
@@ -218,7 +304,6 @@
               });
             }
           } catch (error) {
-            console.error("Image upload error:", error);
             Swal.fire({
               icon: 'warning',
               title: '에러 발생!',
@@ -227,7 +312,9 @@
           }
         }
       }
-    }
+    }    
+
+    requestUserName();
   </script>
 </body>
 </html>
