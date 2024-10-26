@@ -1,0 +1,135 @@
+/* html과 body에 기본 스크롤 제거 */
+html, body {
+  overflow: hidden; /* 기본 스크롤 제거 */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.body-chat {
+  padding-bottom: 0;
+  background-color: #a1c0d6;
+}
+
+.chat-header,
+.chat-header a {
+  background-color: #a1c0d6;
+  color: black;
+}
+
+.chat-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.chat {
+  background-color: #a1c0d6;
+  height: calc(100vh - 45px); /* type-message 높이를 제외한 채팅창 높이 */
+  padding-top: 50px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-y: auto; /* 스크롤 활성화 */
+}
+
+.chat .date-divider {
+  text-align: center;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+}
+
+.chat__message {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.chat__message-from-me {
+  justify-content: flex-end;
+}
+
+.chat__message-to-me img {
+  align-self: flex-start;
+}
+
+.chat__message-time {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.chat__message-from-me .chat__message-body {
+  background-color: #ffe934;
+  margin-left: 5px;
+}
+
+.chat__message-body {
+  padding: 10px 5px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin-right: 5px;
+}
+
+.chat-message-avatar {
+  height: 35px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.chat__message-to-me .chat-message-avatar {
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chat__message .chat__message-username {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.chat__message-center {
+  display: flex;
+  flex-direction: column;
+}
+
+.type-message {
+  width: 100%;
+  height: 45px;
+  background-color: #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 10px;
+  position: sticky;
+  bottom: 0; /* 채팅창 하단에 고정 */
+}
+
+.type-message .fa-plus {
+  color: #b4b4b4;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.type-message__input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.type-message__input input {
+  width: 100%;
+  height: 36px;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.type-message__input .record-message {
+  color: #523737;
+  background-color: #ffe934;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10%;
+}

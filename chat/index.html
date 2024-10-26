@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Chat</title>
+
+  <!-- SweetAlert2 라이브러리의 CSS 및 JS 추가 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
+</head>
+<body class="body-chat">
+  <header class="top-header chat-header">
+    <!-- 상단 헤더 영역으로, 배터리, 시간, 와이파이 아이콘 등을 표시 -->
+    <div class="header__top">
+      <div class="header__column">
+        <i class="fa fa-plane"></i>
+        <i class="fa fa-wifi"></i>
+      </div>
+      <div class="header__column">
+        <span class="header__time">18:38</span>
+      </div>
+      <div class="header__column">
+        <i class="fa fa-moon-o"></i>
+        <i class="fa fa-bluetooth-b"></i>
+        <span class="header__battery">66% <i class="fa fa-battery-full"></i></span>
+      </div>
+    </div>
+    <div class="header__bottom">
+      <!-- 채팅방 이름과 검색 및 메뉴 버튼을 포함하는 하단 헤더 영역 -->
+      <div class="header__column">
+        <a href="chats.html">
+          <i class="fa fa-chevron-left fa-lg"></i>
+        </a>
+      </div>
+      <div class="header__column">
+        <span class="header__text">Chat Room</span>
+      </div>
+      <div class="header__column">
+        <i class="fa fa-search"></i>
+        <i class="fa fa-bars"></i>
+      </div>
+    </div>
+  </header>
+  <main class="chat">
+    <!-- 채팅 시작을 알리는 구분선 -->
+    <div class="date-divider">
+      <span class="date-divider__text">Chat Started</span>
+    </div>
+  </main>
+  <div class="type-message">
+    <!-- 파일 첨부 및 메시지 입력을 위한 하단 입력창 -->
+    <i class="fa fa-plus fa-lg" onclick="document.getElementById('image-input').click();"></i>
+    <div class="type-message__input">
+      <input type="text" id="message-input" placeholder="메시지 입력..." autofocus>
+      <span class="record-message" onclick="sendMessage()">send</span>
+      <input type="file" id="image-input" accept="image/*" multiple onchange="sendImages()" style="display: none;">
+    </div>
+  </div>
+
+  <script>
+    let myName;
+    // 사용자의 이름을 요청하고 환영 메시지를 표시하는 함수
+    async function requestUserName() {
+      const { value: name } = await Swal.fire({
+        icon: 'question',
+        title: '이름을 입력하세요',
+        input: 'text',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        showCancelButton: false,
+        confirmButtonText: '확인',
+        inputValidator: (value) => {
+          if (!value) {
+            return '이름을 입력해야 합니다!';
+          }
+        }
+      });
+    
+      myName = name;
+      // 환영 메시지를 표시하고 닫힌 후 입력창에 포커스
+      Swal.fire({
+        icon: 'success',
+        title: '환영합니다, ' + myName + '님!',
+        text: '채팅에 입장하셨습니다.',
+      }).then(() => {
+        document.getElementById('message-input').focus();
+      });
+    }
+    
+    requestUserName();
+
+    const user_id = 0; // 사용자 고유 ID를 설정
+
+    // WebSocket 연결을 생성하고, 서버와의 통신을 설정
+    const ws = new WebSocket('ws://192.168.216.47/api/chat?user_id=' + user_id);
+
+    ws.onopen = () => {
+      console.log("WebSocket 연결 성공!");
+    };
+
+    // WebSocket으로 수신된 메시지를 화면에 추가하는 로직
+    ws.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      const chatMain = document.querySelector('main.chat');
+      const messageElement = document.createElement('div');
+      const time = new Date().toLocaleTimeString();
+    
+      console.log("data.message : ", data.message);
+
+      // deepfake 이미지가 감지되면 경고창을 표시
+      if (data.message == 'deepfake') {
+        Swal.fire({
+          icon: 'warning',
+          title: '경고!',
+          text: '이 이미지는 deepfake로 식별되었습니다. 주의하세요!',
+          confirmButtonText: '확인'
+        });
+        return;
+      }
+    
+      // URL이 이미지인지 여부를 확인하는 함수
+      const isImageURL = (url) => {
+        return /\.(jpeg|jpg|gif|png|webp|bmp)$/.test(url);
+      };
+    
+      // 메시지가 나로부터 온 것인지 여부에 따라 스타일을 변경하여 채팅창에 추가
+      if (data.user_id === user_id) {
+        messageElement.className = 'chat__message chat__message-from-me';
+        messageElement.innerHTML = `<span class="chat__message-time">${time}</span><span class="chat__message-body">${data.message}</span>`;
+      } else {
+        messageElement.className = 'chat__message chat__message-to-me';
+        if (isImageURL(data.message)) {
+          // 이미지 URL이면 이미지 태그로 표시
+          messageElement.innerHTML = `
+            <img src="images/user.png" alt="" class="chat-message-avatar">
+            <div class="chat__message-center">
+              <h3 class="chat__message-username">User ${data.user_id}</h3>
+              <img src="${data.message}" alt="Image" class="chat__image" style="width: 40vw;">
+            </div>
+            <span class="chat__message-time">${time}</span>
+          `;
+        } else {
+          // 일반 텍스트 메시지일 경우 텍스트로 표시
+          messageElement.innerHTML = `
+            <img src="images/user.png" alt="" class="chat-message-avatar">
+            <div class="chat__message-center">
+              <h3 class="chat__message-username">User ${data.user_id}</h3>
+              <span class="chat__message-body">${data.message}</span>
+            </div>
+            <span class="chat__message-time">${time}</span>
+          `;
+        }
+      }
+    
+      chatMain.appendChild(messageElement);
+      chatMain.scrollTop = chatMain.scrollHeight; // 새 메시지 추가 후 채팅창을 하단으로 스크롤
+    };    
+
+    // WebSocket 에러 발생 시 콘솔에 표시
+    ws.onerror = (error) => {
+      console.error("WebSocket 오류:", error);
+    };
+
+    // 입력 필드의 내용을 WebSocket을 통해 전송하는 함수
+    function sendMessage() {
+      const input = document.getElementById('message-input');
+      const message = input.value.trim();
+      if (message) {
+        ws.send(message);
+        input.value = '';
+      }
+    }
+
+    // 엔터 키 입력 시 메시지 전송
+    document.getElementById('message-input').addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        sendMessage();
+      }
+    });
+
+    // 여러 이미지를 업로드하여 서버에 전송하는 함수
+    async function sendImages() {
+      const imageInput = document.getElementById('image-input');
+      const files = imageInput.files;
+      const chatMain = document.querySelector('main.chat');
+    
+      if (files.length > 0) {
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i];
+          const formData = new FormData();
+          formData.append("files", file);
+    
+          try {
+            const response = await fetch("http://192.168.216.47:8000/api/upload-image/?user_id=" + user_id, {
+              method: "POST",
+              body: formData
+            });
+            const result = await response.json();
+    
+            if (response.ok) {
+              console.log("Image upload success:", result.image_url);
+    
+              // 이미지가 추가된 후에 스크롤을 이동
+              setTimeout(() => {
+                chatMain.scrollTop = chatMain.scrollHeight;
+              }, 100); // 약간의 딜레이를 주어 이미지 추가가 완료된 후 스크롤
+            } else {
+              console.error("Image upload failed:", result.message);
+              Swal.fire({
+                icon: 'warning',
+                title: '이미지 업로드 실패!',
+                text: '이미지 업로드에 실패했습니다. 다시 시도해주세요.',
+              });
+            }
+          } catch (error) {
+            console.error("Image upload error:", error);
+            Swal.fire({
+              icon: 'warning',
+              title: '에러 발생!',
+              text: '이미지 업로드 중 에러가 발생했습니다. 다시 시도해주세요.',
+            });
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>
