@@ -38,17 +38,10 @@
 - FastAPI와 WebSocket을 활용하여 서버와 클라이언트 간 실시간 데이터 통신을 지원하며, 이미지 필터링(딥페이크 이미지 탐지 및 성착취물 검출 AI 모델 사용) 을 통해 부적절한 이미지 탐지도 가능합니다.
 - **기술 스택**: HTML, CSS, JavaScript, FastAPI, WebSocket, SweetAlert2, Font Awesome
 
-|채팅 애플리케이션 - 메인 화면|
-|:---:|
-|<img src="https://github.com/user-attachments/assets/04de8912-bce7-4d54-b2fc-f4fbdfbc361b" width="1000"/>|
-|메인 채팅 화면.|
-
-<br>
-
-|**캡스톤디자인 및 AI 해커톤** - 상장|
-|:---:|
-|<img src="https://github.com/user-attachments/assets/63114c0e-230a-487e-99ee-4e235207ee66" width="500" style="margin: 0 auto"/>|
-|최우수상|
+|채팅 애플리케이션 - 메인 화면|**캡스톤디자인 및 AI 해커톤** - 상장|
+|:---:|:---:|
+|<img src="https://github.com/user-attachments/assets/04de8912-bce7-4d54-b2fc-f4fbdfbc361b" width="900"/>|<img src="https://github.com/user-attachments/assets/63114c0e-230a-487e-99ee-4e235207ee66" width="500"/>|
+|메인 채팅 화면.|최우수상|
 
 ---
 
