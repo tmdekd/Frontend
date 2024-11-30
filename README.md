@@ -47,8 +47,8 @@
 
 |**캡스톤디자인 및 AI 해커톤** - 상장|
 |:---:|
-|<img src="https://github.com/user-attachments/assets/63114c0e-230a-487e-99ee-4e235207ee66" width="500"/>|
-|최우수|
+|<img src="https://github.com/user-attachments/assets/63114c0e-230a-487e-99ee-4e235207ee66" width="500" style="margin: 0 auto"/>|
+|최우수상|
 
 ---
 
