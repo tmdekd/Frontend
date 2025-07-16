@@ -2,6 +2,11 @@
 
 이 프로젝트는 **카카오톡 스타일 UI**를 갖춘 채팅 애플리케이션입니다. 사용자는 실시간으로 메시지와 이미지를 주고받을 수 있으며, 서버는 **FastAPI**로 구현되었습니다. WebSocket을 활용하여 실시간 통신 기능을 제공합니다.
 
+|채팅 애플리케이션 - 메인 화면|**캡스톤디자인 및 AI 해커톤** - 상장|
+|:---:|:---:|
+|<img src="https://github.com/user-attachments/assets/04de8912-bce7-4d54-b2fc-f4fbdfbc361b" width="900"/>|<img src="https://github.com/user-attachments/assets/63114c0e-230a-487e-99ee-4e235207ee66" width="500"/>|
+|메인 채팅 화면.|최우수상|
+
 ---
 
 ## 주요 기능
